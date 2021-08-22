@@ -142,3 +142,7 @@ a.custom-card:hover {
 .contenedor{
   text-align: center;
 }
+.login{
+  text-align: center;
+background-color: rgb(178, 197, 221);
+}
