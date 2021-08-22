@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     getProducts(PRODUCTS_URL)
 });
 
-async function Producto(url) {
+async function getProducts(url) {
     let resultObj = await getJSONData(url);
     if (resultObj.status === 'ok') {
         showProductList(resultObj.data);
@@ -14,9 +14,9 @@ async function Producto(url) {
     }
 }
 
-function Mostrarlista(ListaProducto) {
+function showProductList(productList) {
     let htmlContentToAppend = "";
-    ListaProducto.forEach(({
+    productList.forEach(({
         cost,
         currency,
         description,
@@ -24,21 +24,21 @@ function Mostrarlista(ListaProducto) {
         name,
         soldCount
     }) => {
- htmlContentToAppend += `
-        <a href="#">
-		<img src="${imgSrc}">
-			<div>
-			<h2>${name}</h2>
-			<p>${currency} ${cost}</p>
-			<br>
-			<p>${description}</p>
-			<div>
-			<br>
-			<small>${soldCount} vendidos</small>
-</div>
-</div>
-</a>
+        htmlContentToAppend += `
+        <a href="#" class="col-sm-12 col-md-5 col-lg-3 col-xl-2 product-card">
+					<img src="${imgSrc}" class="product-img">
+					<div class="product-card-body">
+						<h4>${name}</h4>
+						<span>${currency} ${cost}</span>
+						<hr>
+						<p>${description}</p>
+						<div>
+							<hr>
+							<small>${soldCount} vendidos</small>
+						</div>
+					</div>
+				</a>
         `;
     });
-    document.getElementById("contenedero-lista-de-productos").innerHTML = htmlContentToAppend;
+    document.getElementById("product-list-container").innerHTML = htmlContentToAppend;
 }
