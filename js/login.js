@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 }); 
 
-const userName = document.getElementById('user');
-const userPassword = document.getElementById('pwd');
-const submitButton = document.getElementById('submit');
+const userName = document.getElementById('usuario');
+const userPassword = document.getElementById('contraseña');
+const submitButton = document.getElementById('enviar');
 
 submitButton.addEventListener('click', evento =>{
     evento.preventDefault();
