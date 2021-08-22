@@ -40,5 +40,5 @@ function showProductList(productList) {
 				</a>
         `;
     });
-    document.getElementById("product-list-container").innerHTML = htmlContentToAppend;
+    document.getElementById("contenedero-lista-de-productos").innerHTML = htmlContentToAppend;
 }
