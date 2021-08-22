@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     getProducts(PRODUCTS_URL)
 });
 
-async function Producto(url) {
+async function getProducts(url) {
     let resultObj = await getJSONData(url);
     if (resultObj.status === 'ok') {
         showProductList(resultObj.data);
