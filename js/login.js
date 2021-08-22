@@ -18,7 +18,7 @@ submitButton.addEventListener('click', evento =>{
     if(user.length >= 6 && user.length <= 8 && password.length >= 6 && password.length <= 8){
         alert('Acceso correcto!');
 
-        location.href = './productos.html';
+        location.href = './home.html';
     }
     else{
         alert('Usuario y contraseña deben estar entre 6 y 8 caracteres de largo');
