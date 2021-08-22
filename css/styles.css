@@ -144,5 +144,8 @@ a.custom-card:hover {
 }
 .login{
   text-align: center;
-background-color: rgb(178, 197, 221);
+  padding-top: 350px;
+}
+.bodylogin{
+  background-color: rgb(149, 169, 192);
 }
