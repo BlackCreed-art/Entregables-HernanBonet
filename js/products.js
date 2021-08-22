@@ -25,19 +25,19 @@ function showProductList(productList) {
         soldCount
     }) => {
         htmlContentToAppend += `
-        <a href="#" class="col-sm-12 col-md-5 col-lg-3 col-xl-2 product-card">
-					<img src="${imgSrc}" class="product-img">
-					<div class="product-card-body">
-						<h4>${name}</h4>
-						<span>${currency} ${cost}</span>
-						<hr>
-						<p>${description}</p>
-						<div>
-							<hr>
-							<small>${soldCount} vendidos</small>
-						</div>
-					</div>
-				</a>
+		<img src="${imgSrc}"
+		<div>
+			<h1>${name}</h1>
+            <br>
+			<h2>${currency} ${cost}</h2>
+			<br>
+			<h4>${description}</h4>
+		<div>
+			<br>
+			<small>${soldCount} vendidos</small>
+		</div>
+	</div>
+</a>
         `;
     });
     document.getElementById("contenedor-lista-de-productos").innerHTML = htmlContentToAppend;
