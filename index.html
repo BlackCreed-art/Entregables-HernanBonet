@@ -1,18 +1,25 @@
+lines (23 sloc)  798 Bytes
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <title>Document</title>
 </head>
 <body>
-    <form class="login">
-        <label for="username">Nombre de usuario</label>
-        <input type="text" id="username">
-        <label for="password">Contraseña</label>
-        <input type="password" id="password">
-        <button>Login</button>
-    </form>
+    <form autocomplete="off" class="animated fadeInDown" id="login" >
+        <div class="login-form">
+          <h1>sign in</h1>
+          <label for="email">email</label>
+          <input type="text" id="user" placeholder="email@email.com"/>
+          <label for="password">password</label>
+          <input type="password" id="pwd" placeholder="**********"/>
+          <input type="submit" id="submit" value="sign in" />
+        </div>
+      </form> 
+      <script src="login.js"></script>
 </body>
 </html>
