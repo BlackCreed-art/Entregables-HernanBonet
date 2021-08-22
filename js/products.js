@@ -27,7 +27,7 @@ function showProductList(productList) {
         htmlContentToAppend += `
         <a href="#">
 					<img src="${imgSrc}">
-					<div class="product-card-body">
+					<div>
 						<h4>${name}</h4>
 						<span>${currency} ${cost}</span>
 						<hr>
