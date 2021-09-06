@@ -19,6 +19,9 @@ submitButton.addEventListener('click', evento =>{
         alert('Acceso correcto!');
 
         location.replace ("./home.html");
+        localStorage.setItem("usuario", user)
+        localStorage.setItem("contraseña", password)
+
     }
     else{
         alert('Usuario debe tener entre 10 y 20 caracteres de largo y la contraseña entre 6 y 8');
