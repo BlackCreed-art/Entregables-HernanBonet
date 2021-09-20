@@ -26,36 +26,95 @@
       <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="Perfil"></a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
-  <script src="js/my-profile.js"></script>
-</body>
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del Producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+          seleccionado previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
+      </div>
+      <h3 id="nombre"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="descripction"></p>
+        </dd>
+        
+        <dt>Costo</dt>
+        <dd>
+          <p id="currencyCost"" class="categorycurrency"></p>
+        </dd>
 
-</html>
+        <dt>Cantidad de vendidos del producto</dt>
+        <dd>
+          <p id="soldCount"></p>
+        </dd>
+
+        <dt>Categoria</dt>
+        <dd>
+          <p id="categoria"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+      <div id="Coments" class="container">
+      </div>
+    <br>
+    
+    
+      <div class="container">
+        <div >
+          <p style="text-align: center;"><strong>Comentarios:</strong></p>
+          <textarea name="comentario" style="width: 100%; height: 15em;" id="areaComentario" ></textarea>
+          <div >
+            <div>
+              <p><strong>Puntuación:</strong></p>
+              <form>
+                <select style="width: 10em;" name="Puntuacion" id="Puntuacion">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </form>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div>
+          <input type="button" value="Enviar" class="btn btn-primary active" onclick="postComments()">
+        </div>
+      </div>  
+    </main>
+    
+    
+      <footer class="text-muted">
+        <div class="container">
+          <p class="float-right">
+            <a href="#">Volver arriba</a>
+          </p>
+          <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+          <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        </div>
+      </footer>
+      <div id="spinner-wrapper">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/init.js"></script>
+      <script src="js/product-info.js"></script>
+    </body>
+    
+    </html>
