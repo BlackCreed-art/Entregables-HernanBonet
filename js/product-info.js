@@ -1,22 +1,30 @@
 
+// Muestra solo las imagenes del producto
+// Muestra solo las imagenes del producto
 function showImagesGallery(array){
 
-    let htmlContentToAppend = "";
-
-    for(let i = 0; i < array.length; i++){
-        let imageSrc = array[i];
-
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-            </div>
-        </div>
+    let HTMLContettoAppend = `
+    <div class="carousel-item active">
+        <img src="${array.images[0]}" class="d-block w-100">
+    </div>
         `
+    document.getElementById("Imagenesilustrativas").innerHTML = HTMLContettoAppend;
+    
 
-        document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
+    for(let i = 1; i< array.images.length; i++){
+      
+        let HTMLContent = 
+        `
+        <div class="carousel-item">
+            <img src="${array.images[i]}" class="d-block w-100">
+        </div>
+
+        `
+        document.getElementById("Imagenesilustrativas").innerHTML += HTMLContent;
     }
+    
 }
+
 
 
 document.addEventListener("DOMContentLoaded", function(e){
@@ -24,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (enlace.status === "ok") {
             
             showInfo(enlace.data);
-            
+            infoProducts = enlace.data;
         }
     });
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (enlace) {
@@ -32,6 +40,12 @@ document.addEventListener("DOMContentLoaded", function(e){
 
             showComents(enlace.data)
         };
+    });
+    getJSONData(PRODUCTS_URL).then(function (enlace) {
+        if (enlace.status === "ok") {
+
+            ProductosRelacionados(enlace.data)
+        }
     });
 });
 
@@ -43,7 +57,7 @@ function showInfo(data){
     document.getElementById("descripction").innerHTML = data.description;
     document.getElementById("currencyCost").innerHTML = data.currency + " " + data.cost;
     document.getElementById("soldCount").innerHTML = data.soldCount;
-    showImagesGallery(data.images);
+    showImagesGallery(data);
 }
 
 
@@ -114,4 +128,22 @@ function postComments(){
         document.getElementById("areaComentario").value = "";
 
 }
+function ProductosRelacionados(data){
+    let info = infoProducts.relatedProducts
 
+    for(let i = 0; i < info.length; i++){
+
+        let htmlContent2 = `
+        <div>
+                <div class="card list-group-item" style="width:300px;" >
+                    <img src="${data[info[i]].imgSrc}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h4 class="card-text">${data[info[i]].name}</h4>
+                    <p class="card-text">${data[info[i]].description}</p>
+                    </div>
+                </div>
+        </div>`
+
+    document.getElementById("ProductosRelacionados").innerHTML += htmlContent2;
+    }
+}

@@ -28,3 +28,7 @@ submitButton.addEventListener('click', evento =>{
         document.getElementById('login').reset();
     }
 });
+
+function Borrardatos(){
+   localStorage.clear();
+}
