@@ -1,6 +1,3 @@
-
-// Muestra solo las imagenes del producto
-// Muestra solo las imagenes del producto
 function showImagesGallery(array){
 
     let HTMLContettoAppend = `
@@ -34,6 +31,13 @@ document.addEventListener("DOMContentLoaded", function(e){
             showInfo(enlace.data);
             infoProducts = enlace.data;
         }
+        
+        getJSONData(PRODUCTS_URL).then(function (enlace) {
+            if (enlace.status === "ok") {
+    
+                ProductosRelacionados(enlace.data)
+            }
+        });
     });
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (enlace) {
         if (enlace.status === "ok"){
@@ -41,12 +45,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             showComents(enlace.data)
         };
     });
-    getJSONData(PRODUCTS_URL).then(function (enlace) {
-        if (enlace.status === "ok") {
 
-            ProductosRelacionados(enlace.data)
-        }
-    });
 });
 
 
