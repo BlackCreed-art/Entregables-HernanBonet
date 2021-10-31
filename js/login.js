@@ -19,7 +19,7 @@ submitButton.addEventListener('click', evento =>{
         alert('Acceso correcto!');
 
         location.replace ("./home.html");
-        localStorage.setItem("usuario", user)
+        localStorage.setItem("usuario1", user)
         localStorage.setItem("contraseña", password)
 
     }
@@ -28,7 +28,3 @@ submitButton.addEventListener('click', evento =>{
         document.getElementById('login').reset();
     }
 });
-
-function Borrardatos(){
-   localStorage.clear();
-}
