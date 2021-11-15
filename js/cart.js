@@ -53,5 +53,49 @@ function totalPrice(){
     document.getElementById("total").innerHTML = `USD ${total}`;
 }
 
+function Costos(){
+
+    let totalCosto = parseInt(document.getElementById("total").innerHTML.substr(4));
+    let subtotalCosto = document.getElementById("SubTotalCosto");
+    let Costoenvio = document.getElementById("CostoEnvio");
+    let Costototal = document.getElementById("TotalCosto");
 
 
+    subtotalCosto.innerHTML = totalCosto;
+    let dataEnvio = totalCosto * Valorenvio;
+    Costoenvio.innerHTML = parseInt(dataEnvio);
+    let ValorCostoTotal = totalCosto + dataEnvio
+    Costototal.innerHTML = "USD " + parseInt(ValorCostoTotal);
+}
+
+
+document.getElementById("Oro").addEventListener("change", function (e) {
+    Valorenvio = 0.15;
+    Costos();
+});
+document.getElementById("Premium").addEventListener("change", function (e) {
+    Valorenvio = 0.07;
+    Costos();
+});
+document.getElementById("Estandar").addEventListener("change", function (e) {
+    Valorenvio = 0.05;
+    Costos();
+});
+
+function Validar() {
+
+    let calle = document.getElementById("Calle");
+    let localidad = document.getElementById("Localidad");
+    let departamento = document.getElementById("Departamento");
+    let tarjeta = document.getElementById("Tarjeta");
+    let fecha= document.getElementById("Fecha");
+    let codigo = document.getElementById("Codigo");
+    let cuenta = document.getElementById("CuentaBancaria");
+    
+    if (calle.value === ""||localidad.value === ""||departamento.value === ""||tarjeta.value === ""||codigo.value === ""||fecha.value === ""||cuenta.value === "") {
+        alert("Necesita completar todos los campos, en caso de no tener colocar -");
+    }
+        else {
+        alert("Datos Enviados Correctamente");
+    }
+}
